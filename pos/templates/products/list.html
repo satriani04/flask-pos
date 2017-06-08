@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>price</th>
+            <th>stock</th>
+            <th>action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>
+                    {{ product.id }}
+                </td>
+                <td>
+                    {{ product.name }}
+                </td>
+                <td>
+                    {{ product.price }}
+                </td>
+                <td>
+                    {{ product.stock }}
+                </td>
+                <td>
+                    <a href="/products/update?id={{ product.id }}">edit</a>
+                    <a href="/products/delete?id={{ product.id }}">delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="" method="post">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input name="name" type="text" class="form-control" id="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input name="price" type="text" class="form-control" id="price" placeholder="Price">
+        </div>
+        <div class="form-group">
+            <label for="stock">Stock</label>
+            <input name="stock" type="text" class="form-control" id="stock" placeholder="Stock">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+{% endblock %}
