@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>products</th>
+            <th>create on</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for transaction in transactions %}
+        <tr>
+            <td>
+                {{ transaction.id }}
+            </td>
+            <td>
+                <ul>
+                {% for transaction_product in transaction.transaction_products %}
+                    <li>{{ transaction_product.product.name }} = {{ transaction_product.product_qty }}</li>
+                {% endfor %}
+                </ul>
+            </td>
+            <td>
+                {{ transaction.create_on }}
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

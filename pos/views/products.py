@@ -4,6 +4,10 @@ from pos.models import db
 
 bp = Blueprint("products",__name__)
 
+@bp.route("/")
+def index():
+	return redirect("/products")
+
 @bp.route("/products")
 def product_list():
 	product = Products.query.all()
